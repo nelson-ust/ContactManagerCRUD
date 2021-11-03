@@ -27,7 +27,7 @@ def create(request):
 def edit(request, pk, template_name='contactapp/edit.html'):
     contact = get_object_or_404(Contact, pk=pk)
    # form = ContactForm(request.POST or None, instance=post)
-    form = ContactForm(request.POST or None)
+    form = ContactForm(request.POST or None,)
     if form.is_valid():
         form.save()
         return redirect('index')
